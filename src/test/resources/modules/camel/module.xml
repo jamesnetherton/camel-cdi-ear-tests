@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.1" name="org.apache.camel">
+    <resources>
+        <artifact name="org.apache.camel:camel-cdi:2.16.1" />
+        <artifact name="org.apache.camel:camel-core:2.16.1" />
+        <artifact name="org.apache.deltaspike.core:deltaspike-core-api:1.5.1" />
+        <artifact name="org.apache.deltaspike.core:deltaspike-core-impl:1.5.1" />
+    </resources>
+    <dependencies>
+        <module name="javax.annotation.api" />
+        <module name="javax.api" />
+        <module name="javax.enterprise.api" />
+        <module name="javax.xml.bind.api" />
+        <module name="org.jboss.weld.core" />
+        <module name="org.jboss.weld.spi" />
+        <module name="org.slf4j" />
+        <module name="sun.jdk">
+            <imports>
+                <include path="sun/misc/Unsafe" />
+            </imports>
+        </module>
+    </dependencies>
+</module>
