@@ -64,7 +64,7 @@ public class CdiEarWithAllDependenciesTest {
         BeanManager camelBeanManager = beanMangers.get("camel");
 
         System.err.println(">>>>>> [Sub Module BeanManager] " + subModuleBeanManager);
-        System.err.println(">>>>>> [Camel BeanManager]" + camelBeanManager);
+        System.err.println(">>>>>> [Camel BeanManager] " + camelBeanManager);
 
         // Assert that the @Named HelloBean can be resolved
         Assert.assertTrue("Sub module bean manager could not resolve helloBean",
