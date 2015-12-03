@@ -1,6 +1,8 @@
 package com.jamesnetherton.tests.cdi.ear.bean;
 
 import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -32,7 +34,7 @@ public class Bootstrap {
             context.addRoutes(new RouteBuilder() {
                 @Override
                 public void configure() {
-                    from("timer:foo?period=500")
+                    from("direct:start")
                     .process(new Processor() {
                         @Override
                         public void process(Exchange exchange) throws Exception {
@@ -40,10 +42,13 @@ public class Bootstrap {
                             field.setAccessible(true);
 
                             BeanManager camelBeanManager = (BeanManager) field.get(exchange.getContext());
-                            exchange.getOut().setBody(beanManager.toString() + "\n" + camelBeanManager.toString());
+                            Map<String, BeanManager> beanManagers = new HashMap<String, BeanManager>();
+                            beanManagers.put("subModule", beanManager);
+                            beanManagers.put("camel", camelBeanManager);
+
+                            exchange.getOut().setBody(beanManagers);
                         }
-                    })
-                    .to("file:target?fileName=beanmanagers.txt");
+                    });
                 }
             });
             context.start();

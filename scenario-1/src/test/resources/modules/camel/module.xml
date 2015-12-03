@@ -3,6 +3,7 @@
     <resources>
         <artifact name="org.apache.camel:camel-cdi:2.16.1" />
         <artifact name="org.apache.camel:camel-core:2.16.1" />
+        <artifact name="org.apache.camel:camel-jmx:2.16.1" />
         <artifact name="org.apache.deltaspike.core:deltaspike-core-api:1.5.1" />
         <artifact name="org.apache.deltaspike.core:deltaspike-core-impl:1.5.1" />
     </resources>
