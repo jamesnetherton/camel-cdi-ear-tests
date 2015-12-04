@@ -46,23 +46,27 @@ As per scenario 1 but the Camel dependencies are modularized in module `org.apac
 
 WAR deployment with Camel dependencies modularized in module `org.apache.camel.cdi`.
 
+```
 - my-application.war
   |--- WEB-INF
        |--- beans.xml
        |--- classes
             |--- Bootstrap.class
             |--- HelloBean.class            
+```
 
 ### Scenario 4
 
 JAR deployment with Camel dependencies modularized in module `org.apache.camel.cdi`.
 
+```
 - my-application.jar
   |--- META-INF
        |--- beans.xml
   |--- com.myapplication
        |--- Bootstrap.class
        |--- HelloBean.class
+```
             
 ### Running tests
 
