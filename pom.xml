@@ -31,6 +31,8 @@
     <modules>
         <module>scenario-1</module>
         <module>scenario-2</module>
+        <module>scenario-3</module>
+        <module>scenario-4</module>
     </modules>
 
     <dependencyManagement>

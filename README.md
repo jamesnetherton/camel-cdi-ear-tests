@@ -1,10 +1,10 @@
 # Camel CDI EAR Test
 
-Runs two CDI Ear deployment test scenarios.
+Runs two CDI EAR deployment test scenarios.
 
 ### Scenario 1
 
-Deploys an Ear with Camel CDI dependencies contained within the Ear lib directory and a simple Camel application as a Jar sub-module.
+Deploys an EAR with Camel CDI dependencies contained within the EAR lib directory and a simple Camel application as a JAR sub-module.
 
 ```
 - my-application.ear
@@ -42,10 +42,38 @@ As per scenario 1 but the Camel dependencies are modularized in module `org.apac
 |-- deltaspike-core-impl-1.5.1.jar
 ```
             
+### Scenario 3
+
+WAR deployment with Camel dependencies modularized in module `org.apache.camel.cdi`.
+
+- my-application.war
+  |--- WEB-INF
+       |--- beans.xml
+       |--- classes
+            |--- Bootstrap.class
+            |--- HelloBean.class            
+
+### Scenario 4
+
+JAR deployment with Camel dependencies modularized in module `org.apache.camel.cdi`.
+
+- my-application.jar
+  |--- META-INF
+       |--- beans.xml
+  |--- com.myapplication
+       |--- Bootstrap.class
+       |--- HelloBean.class
+            
 ### Running tests
 
 Clone this project and run:
 
 ```
 mvn clean install
+```
+
+Or run individual scenarios:
+
+```
+mvn clean install -pl scenario-4
 ```
