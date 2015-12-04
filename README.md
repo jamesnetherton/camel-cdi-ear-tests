@@ -1,6 +1,6 @@
 # Camel CDI EAR Test
 
-Runs two CDI EAR deployment test scenarios.
+Runs a set of Apache Camel CDI deployment test scenarios on WildFly.
 
 ### Scenario 1
 
